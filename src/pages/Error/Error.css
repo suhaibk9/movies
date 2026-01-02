@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-gradient-end) 100%);
+    color: var(--text-main);
     font-family: 'Outfit', sans-serif;
     text-align: center;
     overflow: hidden;
@@ -16,7 +16,7 @@
     font-size: 12rem;
     font-weight: 900;
     margin: 0;
-    background: linear-gradient(to right, #e94560, #0f3460);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -31,12 +31,12 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #e94560;
+    color: var(--primary);
 }
 
 .error-message {
     font-size: 1.2rem;
-    color: #a0a0a0;
+    color: var(--text-muted);
     margin-bottom: 2.5rem;
     max-width: 500px;
     line-height: 1.6;
@@ -46,8 +46,8 @@
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
-    background: #e94560;
+    color: var(--text-main);
+    background: var(--primary);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -60,7 +60,7 @@
 .home-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(233, 69, 96, 0.6);
-    background: #ff577f;
+    background: var(--highlight);
 }
 
 @keyframes glitch {

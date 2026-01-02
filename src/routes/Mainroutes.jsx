@@ -7,7 +7,7 @@ function MainRouter() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/:name" element={<Moviecard />} />
+      <Route path="/movie/:name" element={<Moviecard />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );
