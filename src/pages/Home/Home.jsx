@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAllPage1Movies = async () => {
       try {
-        await downloadDefaultMovies("Harry", "Avengers", "Tom", "Impossible","hitler");
+        await downloadDefaultMovies("Harry", "Avengers", "Tom", "Impossible","hitler  ");
       } catch (error) {
         console.error("Failed to fetch movies:", error);
       }
