@@ -1,13 +1,119 @@
 :root {
-  --bg-dark: #1a1a2e;
-  --bg-gradient-end: #16213e;
+  /* ============================================ */
+  /* ========== LIGHT MODE (Default) =========== */
+  /* ============================================ */
+
+  /* === Background Colors (Light Theme) === */
+  --bg-dark: #f5f7fa;
+  --bg-darker: #ffffff;
+  --bg-gradient-end: #e8ecf3;
+  --bg-surface: #ffffff;
+  --bg-surface-light: #f8f9fb;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-dark: rgba(245, 247, 250, 0.98);
+  --bg-input: rgba(245, 245, 250, 1);
+  --bg-input-dark: rgba(235, 235, 245, 1);
+  --bg-input-focus: rgba(255, 255, 255, 1);
+  --bg-input-focus-dark: rgba(250, 250, 255, 1);
+  --bg-navbar-start: rgba(255, 255, 255, 1);
+  --bg-navbar-end: rgba(245, 247, 250, 1);
+  --bg-dropdown: rgba(255, 255, 255, 1);
+
+  /* === Primary/Accent Colors === */
   --primary: #e94560;
-  --secondary: #0f3460;
+  --primary-light: #ff6b8a;
+  --secondary: #3b82f6;
   --highlight: #ff577f;
-  --text-main: #fff;
-  --text-muted: #a0a0a0;
-  --brand-aqua: aqua;
-  --border-black: black;
+  --accent-cyan: #0891b2;
+  --accent-purple: #8b5cf6;
+
+  /* === Text Colors (Dark text for light backgrounds) === */
+  --text-main: #1a1a2e;
+  --text-secondary: #2d3748;
+  --text-muted: #6b7280;
+  --text-muted-light: #64748b;
+  --text-dim: #94a3b8;
+  --text-light: #475569;
+  --text-bright: #334155;
+
+  /* === Border/Shadow Colors === */
+  --border-black: #e2e8f0;
+  --border-white: #cbd5e1;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-lighter: rgba(0, 0, 0, 0.04);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --shadow-darker: rgba(0, 0, 0, 0.15);
+  --shadow-light: rgba(0, 0, 0, 0.05);
+
+  /* === Transparency Colors === */
+  --white-50: rgba(0, 0, 0, 0.5);
+  --white-80: rgba(0, 0, 0, 0.8);
+  --white-10: rgba(0, 0, 0, 0.06);
+  --white-05: rgba(0, 0, 0, 0.04);
+  --white-03: rgba(0, 0, 0, 0.02);
+  --black-50: rgba(0, 0, 0, 0.08);
+  --black-40: rgba(0, 0, 0, 0.06);
+
+  /* === Legacy === */
+  --brand-aqua: #0891b2;
+
+  /* ============================================ */
+  /* ============= DARK MODE VARS ============== */
+  /* ============================================ */
+
+  /* === Background Colors (Dark Theme) === */
+  --bg-dark-dark-mode: #1a1a2e;
+  --bg-darker-dark-mode: #0d0d0d;
+  --bg-gradient-end-dark-mode: #16213e;
+  --bg-surface-dark-mode: #121212;
+  --bg-surface-light-dark-mode: #1f1f1f;
+  --bg-card-dark-mode: rgba(30, 30, 50, 0.9);
+  --bg-card-dark-dark-mode: rgba(20, 20, 40, 0.95);
+  --bg-input-dark-mode: rgba(50, 50, 50, 1);
+  --bg-input-dark-dark-mode: rgba(30, 30, 30, 1);
+  --bg-input-focus-dark-mode: rgba(60, 60, 60, 1);
+  --bg-input-focus-dark-dark-mode: rgba(40, 40, 40, 1);
+  --bg-navbar-start-dark-mode: rgba(3, 3, 3, 1);
+  --bg-navbar-end-dark-mode: rgba(56, 55, 55, 1);
+  --bg-dropdown-dark-mode: rgba(30, 30, 30, 1);
+
+  /* === Primary/Accent Colors (Dark Theme) === */
+  --primary-dark-mode: #e94560;
+  --primary-light-dark-mode: #ff6b6b;
+  --secondary-dark-mode: #0f3460;
+  --highlight-dark-mode: #ff577f;
+  --accent-cyan-dark-mode: #00d4ff;
+  --accent-purple-dark-mode: #7c3aed;
+
+  /* === Text Colors (Light text for dark backgrounds) === */
+  --text-main-dark-mode: #fff;
+  --text-secondary-dark-mode: #f7fafc;
+  --text-muted-dark-mode: #a0a0a0;
+  --text-muted-light-dark-mode: #a0aec0;
+  --text-dim-dark-mode: #718096;
+  --text-light-dark-mode: #cbd5e0;
+  --text-bright-dark-mode: #e2e8f0;
+
+  /* === Border/Shadow Colors (Dark Theme) === */
+  --border-black-dark-mode: black;
+  --border-white-dark-mode: white;
+  --border-light-dark-mode: rgba(255, 255, 255, 0.1);
+  --border-lighter-dark-mode: rgba(255, 255, 255, 0.05);
+  --shadow-dark-dark-mode: rgba(0, 0, 0, 0.5);
+  --shadow-darker-dark-mode: rgba(0, 0, 0, 0.6);
+  --shadow-light-dark-mode: rgba(255, 255, 255, 0.1);
+
+  /* === Transparency Colors (Dark Theme) === */
+  --white-50-dark-mode: rgba(255, 255, 255, 0.5);
+  --white-80-dark-mode: rgba(255, 255, 255, 0.8);
+  --white-10-dark-mode: rgba(255, 255, 255, 0.1);
+  --white-05-dark-mode: rgba(255, 255, 255, 0.05);
+  --white-03-dark-mode: rgba(255, 255, 255, 0.03);
+  --black-50-dark-mode: rgba(0, 0, 0, 0.5);
+  --black-40-dark-mode: rgba(0, 0, 0, 0.4);
+
+  /* === Legacy (Dark Theme) === */
+  --brand-aqua-dark-mode: aqua;
 }
 
 html {
@@ -19,6 +125,71 @@ html {
 *::before {
   box-sizing: border-box;
 }
-body{
-  padding: 0;margin: 0;
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f5f7fa;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================ */
+/* ========== DARK MODE OVERRIDES ============ */
+/* ============================================ */
+body.dark-mode {
+  background-color: #0d0d0d;
+
+  /* Background Colors */
+  --bg-dark: var(--bg-dark-dark-mode);
+  --bg-darker: var(--bg-darker-dark-mode);
+  --bg-gradient-end: var(--bg-gradient-end-dark-mode);
+  --bg-surface: var(--bg-surface-dark-mode);
+  --bg-surface-light: var(--bg-surface-light-dark-mode);
+  --bg-card: var(--bg-card-dark-mode);
+  --bg-card-dark: var(--bg-card-dark-dark-mode);
+  --bg-input: var(--bg-input-dark-mode);
+  --bg-input-dark: var(--bg-input-dark-dark-mode);
+  --bg-input-focus: var(--bg-input-focus-dark-mode);
+  --bg-input-focus-dark: var(--bg-input-focus-dark-dark-mode);
+  --bg-navbar-start: var(--bg-navbar-start-dark-mode);
+  --bg-navbar-end: var(--bg-navbar-end-dark-mode);
+  --bg-dropdown: var(--bg-dropdown-dark-mode);
+
+  /* Primary/Accent Colors */
+  --primary: var(--primary-dark-mode);
+  --primary-light: var(--primary-light-dark-mode);
+  --secondary: var(--secondary-dark-mode);
+  --highlight: var(--highlight-dark-mode);
+  --accent-cyan: var(--accent-cyan-dark-mode);
+  --accent-purple: var(--accent-purple-dark-mode);
+
+  /* Text Colors */
+  --text-main: var(--text-main-dark-mode);
+  --text-secondary: var(--text-secondary-dark-mode);
+  --text-muted: var(--text-muted-dark-mode);
+  --text-muted-light: var(--text-muted-light-dark-mode);
+  --text-dim: var(--text-dim-dark-mode);
+  --text-light: var(--text-light-dark-mode);
+  --text-bright: var(--text-bright-dark-mode);
+
+  /* Border/Shadow Colors */
+  --border-black: var(--border-black-dark-mode);
+  --border-white: var(--border-white-dark-mode);
+  --border-light: var(--border-light-dark-mode);
+  --border-lighter: var(--border-lighter-dark-mode);
+  --shadow-dark: var(--shadow-dark-dark-mode);
+  --shadow-darker: var(--shadow-darker-dark-mode);
+  --shadow-light: var(--shadow-light-dark-mode);
+
+  /* Transparency Colors */
+  --white-50: var(--white-50-dark-mode);
+  --white-80: var(--white-80-dark-mode);
+  --white-10: var(--white-10-dark-mode);
+  --white-05: var(--white-05-dark-mode);
+  --white-03: var(--white-03-dark-mode);
+  --black-50: var(--black-50-dark-mode);
+  --black-40: var(--black-40-dark-mode);
+
+  /* Legacy */
+  --brand-aqua: var(--brand-aqua-dark-mode);
 }

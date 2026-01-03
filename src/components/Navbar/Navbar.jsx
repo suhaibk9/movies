@@ -8,7 +8,10 @@ import useDebounce from "../../hooks/useDebounce";
 import loadash from "lodash";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 const Navbar = () => {
+  const [light, setLight] = useState(true)
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const { movieList, searchMovies } = useMovieList();
@@ -33,6 +36,15 @@ const Navbar = () => {
       fetchDefaultMovies();
     }
   }, [autoCompleteVisible]);
+
+  // Theme toggle effect
+  useEffect(() => {
+    if (!light) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [light]);
   const handleClickOnResult = (e) => {
     e.stopPropagation();
     setAutocompleteVisible(false);
@@ -83,7 +95,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div>Theme</div>
+      <div style={{ scale: 1.4 }} onClick={() => setLight(!light)}>{light ? <MdLightMode /> : <MdDarkMode />}</div>
     </div>
   );
 };
