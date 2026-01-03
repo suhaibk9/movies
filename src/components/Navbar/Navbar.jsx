@@ -11,6 +11,8 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+// import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
   const [light, setLight] = useState();
   const { getFromLocalStorage, storeInLocalStorage } = useLocalStorage(true);
@@ -107,9 +109,15 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div style={{ scale: 1.4 }} onClick={handleThemeChange}>
+      <div data-tooltip-id="themeTooltip" style={{ scale: 1.4 }} onClick={handleThemeChange}>
         {light ? <MdLightMode /> : <MdDarkMode />}
       </div>
+      <Tooltip
+        id="themeTooltip"
+        place="bottom"
+        content={light ? "Switch To Dark Mode" : "Switch To Light Mode"}
+        className="theme-tooltip"
+      />
     </div>
   );
 };
