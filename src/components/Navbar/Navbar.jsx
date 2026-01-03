@@ -109,7 +109,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div data-tooltip-id="themeTooltip" style={{ scale: 1.4 }} onClick={handleThemeChange}>
+      <div data-tooltip-id="themeTooltip" style={{ scale: 1.4, cursor: 'pointer' }} onClick={handleThemeChange}>
         {light ? <MdLightMode /> : <MdDarkMode />}
       </div>
       <Tooltip
