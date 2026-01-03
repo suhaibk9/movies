@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { searchMoviesByPage, searchMovies as searchMoviesUrl } from "../constants/api";
+import { searchMoviesByPage, searchMovies as searchMoviesUrl, getMovieById } from "../constants/api";
 import axios from "axios";
 const useMovieList = () => {
   const [movieList, setMovieList] = useState([]);
@@ -27,10 +27,21 @@ const useMovieList = () => {
       setMovieList([]);
     }
   }
+  async function getMovieByImdbID(imdbID) {
+    const searchURL = getMovieById(imdbID);
+    const response = await axios.get(searchURL);
+    if (response.data) {
+      return response.data;
+    }
+    else {
+      return null
+    }
+  }
   return {
     movieList,
     downloadDefaultMovies,
-    searchMovies,
+    searchMovies, 
+    getMovieByImdbID
   };
 };
 export default useMovieList;

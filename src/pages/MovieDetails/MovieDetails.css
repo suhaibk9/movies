@@ -1,0 +1,252 @@
+/* ===== Movie Details Page Styles ===== */
+
+.movie-details-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.movie-card-detailed {
+    display: flex;
+    gap: 50px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(145deg, rgba(30, 30, 50, 0.9), rgba(20, 20, 40, 0.95));
+    border-radius: 24px;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Poster Section ===== */
+.movie-poster {
+    flex-shrink: 0;
+    width: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.02);
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== Info Section ===== */
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: #fff;
+}
+
+/* === Title Header === */
+.movie-title-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* === Meta Info === */
+.movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: #a0aec0;
+}
+
+.movie-meta span {
+    color: #a0aec0;
+}
+
+.meta-badge {
+    background: linear-gradient(135deg, #e94560, #ff6b6b);
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* === Plot === */
+.plot {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #00d4ff;
+    border-radius: 0 12px 12px 0;
+}
+
+.plot p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cbd5e0;
+    font-style: italic;
+}
+
+/* === Stats Grid === */
+.movie-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f7fafc;
+}
+
+/* === Ratings === */
+.ratings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.rating-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+}
+
+/* ===== Loading State ===== */
+.movie-details-container h1 {
+    font-size: 2rem;
+    color: #00d4ff;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+    .movie-card-detailed {
+        flex-direction: column;
+        padding: 24px;
+        gap: 30px;
+    }
+
+    .movie-poster {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .movie-title-header h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .movie-meta {
+        justify-content: center;
+    }
+
+    .movie-stats {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ratings {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .movie-details-container {
+        padding: 20px 10px;
+    }
+
+    .movie-card-detailed {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .movie-title-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .plot {
+        padding: 14px;
+    }
+
+    .plot p {
+        font-size: 0.95rem;
+    }
+}

@@ -1,16 +1,108 @@
-# React + Vite
+# 🎬 Movie Base
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React movie browsing application powered by the OMDB API. Search for movies, explore details, and enjoy a sleek dark-themed UI.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🔍 **Live Search** — Debounced autocomplete with instant suggestions
+- 🎥 **Movie Details** — Full info including plot, cast, ratings & more
+- 🎨 **Modern UI** — Dark theme with glassmorphism and smooth animations
+- 📱 **Responsive** — Works beautifully on all screen sizes
+- ⚡ **Fast** — Built with Vite for lightning-fast dev experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+| Category | Technology |
+|----------|------------|
+| Framework | React 19 |
+| Bundler | Vite 7 |
+| Routing | React Router DOM |
+| HTTP Client | Axios |
+| Styling | Vanilla CSS (custom design system) |
+| API | [OMDB API](https://www.omdbapi.com/) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- OMDB API Key ([Get one free](https://www.omdbapi.com/apikey.aspx))
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/suhaibk9/movies.git
+cd movies
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+# Add your OMDB API key to .env
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_OMDB_API_KEY=your_api_key_here
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   └── Navbar/          # Search bar with autocomplete
+├── pages/
+│   ├── Home/            # Movie grid display
+│   ├── MovieDetails/    # Individual movie view
+│   ├── Moviecard/       # Reusable movie card component
+│   └── Error/           # 404 page
+├── hooks/
+│   ├── useMovieList.jsx # API data fetching logic
+│   └── useDebounce.js   # Debounce utility hook
+├── constants/
+│   └── api.js           # API endpoint configuration
+└── routes/
+    └── Mainroutes.jsx   # App routing setup
+```
+
+## 📜 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ by Suhaib Khan
