@@ -7,11 +7,23 @@ import useMovieList from "../../hooks/useMovieList";
 import useDebounce from "../../hooks/useDebounce";
 import loadash from "lodash";
 import { useEffect } from "react";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 const Navbar = () => {
-  const [light, setLight] = useState(true)
+  const [light, setLight] = useState();
+  const { getFromLocalStorage, storeInLocalStorage } = useLocalStorage(true);
+  useEffect(() => {
+    const savedTheme = getFromLocalStorage("theme");
+    if (savedTheme !== null) {
+      setLight(savedTheme);
+    }
+  }, []);
+  const handleThemeChange = () => {
+    setLight(!light);
+    storeInLocalStorage("theme", !light);
+  };
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const { movieList, searchMovies } = useMovieList();
@@ -40,9 +52,9 @@ const Navbar = () => {
   // Theme toggle effect
   useEffect(() => {
     if (!light) {
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.classList.remove("dark-mode");
     }
   }, [light]);
   const handleClickOnResult = (e) => {
@@ -95,7 +107,9 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div style={{ scale: 1.4 }} onClick={() => setLight(!light)}>{light ? <MdLightMode /> : <MdDarkMode />}</div>
+      <div style={{ scale: 1.4 }} onClick={handleThemeChange}>
+        {light ? <MdLightMode /> : <MdDarkMode />}
+      </div>
     </div>
   );
 };
